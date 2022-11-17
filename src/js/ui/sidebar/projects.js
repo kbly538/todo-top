@@ -5,7 +5,7 @@ const projectTab = document.querySelector('.projects-container');
 const prjBtn = document.querySelector('#get-projects');
 const createNewProjectBtn = document.querySelector('.create-new-project.btn')
 export const projects = projectTab.childNodes;
-let currElement = '';
+
 
 
 // UPDATE PROJECT LIST
@@ -31,3 +31,4 @@ createNewProjectBtn.addEventListener('click', ()=>{
     createProject(String(Math.floor(Math.random() * 300 )+ 30))
     updateProjectList()
 })
+

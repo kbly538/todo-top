@@ -22,7 +22,6 @@ const createTodoItem = function(title, description, priority, dueDate)
     
     if (invalidItem) {
         throw Error('Title cannot be less than 2 characters long')
-        return;
     };
 
     const item = new TodoItem(title, description, priority, dueDate)
