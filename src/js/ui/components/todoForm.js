@@ -1,3 +1,4 @@
+import getProjectCollection from "../../model/projectCollection/projectCollection";
 import { submitTodoForm } from "../eventHandlers/formEvents";
 
 const createForm = function (e) {
@@ -56,6 +57,27 @@ const createForm = function (e) {
     formElements.push(inptDueDate);
 
 
+
+    // Create label and input for DUE DATE
+    const lblProject = document.createElement('label');
+    lblProject.setAttribute('for', 'selectProject');
+    
+    const selectProject = document.createElement('select');
+    selectProject.name = 'selectProject';
+    selectProject.id = 'selectProject';
+    getProjectCollection().forEach(proj => {
+        const option = document.createElement('option');
+        option.value = proj.id;
+        option.textContent = proj.title;
+        selectProject.appendChild(option);
+    })
+    
+    formElements.push(lblProject)
+    formElements.push(selectProject)
+
+
+
+    // Create submit button
     const submitBtn = document.createElement('div');
     submitBtn.textContent = 'Add'
     submitBtn.id = 'submitBtn'
