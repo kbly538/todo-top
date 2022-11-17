@@ -15,5 +15,18 @@ module.exports = {
           template: './src/index.html'
         }),
       ],
-    devtool: 'inline-source-map'
+    devtool: 'inline-source-map',
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"]
+        },
+        {
+          test: /\.(svg|png)$/i,
+          type: "asset/resource"
+        },
+        
+      ]
+    }
 }

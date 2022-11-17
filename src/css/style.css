@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+*, ul, li {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+body {
+    width: 100%;
+}
+
+/* HEADER */
+.site-header {
+    width: 100%;
+    height: 3rem;
+    padding: 3px;
+    background-color: rgb(83, 162, 211);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-title {
+    font-size: 2rem;
+    color: white;
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+.user-panel {
+    font-size: 2rem;
+    color: white;
+    margin-right: 20px;
+    font-weight: 700;
+
+}
+
+.grid-container {
+    height: calc(100vh - 3rem);
+    display: grid;
+    background-color: rgb(209, 242, 242);
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: auto;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+    background-color: coral;
+    padding: 10px;
+}
+    /* SIDEBAR HEADING*/
+.sidebar .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    /* All PROJECTS */
+.allprojects {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+        .projects-container{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .create-new-project.btn {
+            background-color: rgb(83, 162, 211);
+            padding: 5px;
+            border-radius: 3px;
+            text-align: center;
+        }
+    
+/* MAIN CONTENT */
+.main-content {
+    padding: 10px 10px 10px 10px;
+    background-color: white;
+    
+}
+    /* MAIN CONTENT: PROJECT */
+    .main-content-project {
+        margin: 10px 20px;
+        margin-bottom: 100px;
+    }
+        .project-todos {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .single-todo-div {
+            padding: 25px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+
+/* FOOTER */
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    padding: 3px;
+    background-color: rgb(83, 162, 211);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-git-img {
+    width: 32px;
+    height: 32px;
+    margin-left: 20px;
+
+}
+
+
