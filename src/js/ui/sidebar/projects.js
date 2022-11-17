@@ -1,8 +1,9 @@
-import { createProject, getProjectCollection } from "../../model/todoProject";
+import createProject from "../../model/toDoProject/toDoProjectOperations";
+import getProjectCollection from "../../model/projectCollection/projectCollection";
+
 import { displayProjectDetails } from "../main_content/projectDetails";
 
 const projectTab = document.querySelector('.projects-container');
-const prjBtn = document.querySelector('#get-projects');
 const createNewProjectBtn = document.querySelector('.create-new-project.btn')
 export const projects = projectTab.childNodes;
 

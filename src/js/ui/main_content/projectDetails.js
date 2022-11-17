@@ -1,10 +1,10 @@
-import { getProjectCollection } from "../../model/todoProject";
+import getProjectCollection from "../../model/projectCollection/projectCollection"
 
 let HIGH_PRIORITY_COLOR = '#ef5350'
 let MEDIUM_PRIORITY_COLOR = '#ff9800'
 let LOW_PRIORITY_COLOR = '#4caf50'
 
-export let currElement = ''; // REMOVE
+
 const mainContent = document.querySelector('.main-content')
 
 
@@ -16,7 +16,6 @@ export const displayProjectDetails = function(id){
     mainContent.innerHTML = '';
     const projects = getProjectCollection()
     const currentProject = projects.find(p => p.id === id)
-    currElement = currentProject; // REMOVE
     projectContents = createProjectDetailsComponents(currentProject);
     mainContent.appendChild(projectContents)
 }
