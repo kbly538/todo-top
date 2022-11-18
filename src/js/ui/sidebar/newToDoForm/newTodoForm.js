@@ -8,17 +8,32 @@ const todoForm = document.createElement('div');
 mainContent.appendChild(todoForm)
 
 
-// Create form
-createTodoBtn.addEventListener('click', (e)=> {
-    
-    todoForm.innerHTML = "";
-    const form = createForm();
-    todoForm.classList.remove('todo-form-wrapper-inactive')
-    todoForm.classList.add('todo-form-wrapper-active')
-    todoForm.appendChild(form);
-    mainContent.appendChild(todoForm);
 
-})
+const evLis = function(btn){
+    btn.addEventListener('click', (e)=> {
+    
+        todoForm.innerHTML = "";
+        const form = createForm();
+        todoForm.classList.remove('todo-form-wrapper-inactive')
+        todoForm.classList.add('todo-form-wrapper-active')
+        todoForm.appendChild(form);
+        mainContent.appendChild(todoForm);
+    
+    })
+}
+// Create form
+// createTodoBtn.addEventListener('click', (e)=> {
+    
+//     todoForm.innerHTML = "";
+//     const form = createForm();
+//     todoForm.classList.remove('todo-form-wrapper-inactive')
+//     todoForm.classList.add('todo-form-wrapper-active')
+//     todoForm.appendChild(form);
+//     mainContent.appendChild(todoForm);
+
+// })
+
+evLis(createTodoBtn)
 
 
 // Closes form when clicked in the negative space

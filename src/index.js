@@ -6,7 +6,9 @@ import "./js/ui/footer/footer"
 import "./js/ui/sidebar/projects"
 import "./js/ui/main_content/projectDetails"
 import "./js/ui/sidebar/newToDoForm/newTodoForm"
+import "./js/ui/components/floatingActionButton"
 import { projects, updateProjectList } from "./js/ui/sidebar/projects";
+
 
 const todoArgs1 = ['exercise', 'upper body for 1 hour', PRIORITIES.HIGH]
 const todoArgs2 = ['exercise', 'upper body for 1 hour', PRIORITIES.LOW]
