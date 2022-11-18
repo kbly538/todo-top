@@ -12,6 +12,7 @@ const todoArgs1 = ['exercise', 'upper body for 1 hour', PRIORITIES.HIGH]
 const todoArgs2 = ['exercise', 'upper body for 1 hour', PRIORITIES.LOW]
 const todoArgs3 = ['exercise', 'upper body for 1 hour', PRIORITIES.MEDIUM]
 
+let defaultProject = createProject('Default');
 
 let homeProject = createProject('Home');
 let workProject = createProject('Work');

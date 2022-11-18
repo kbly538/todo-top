@@ -1,10 +1,11 @@
-const addTodoProject = function() {
+import getProjectCollection from "../model/projectCollection/projectCollection"
+
+export const addTodoProject = function() {
 
 }
-const removeToDoProject = function () {
+export const removeToDoProject = function () {
     
 }
-const getToDoProjectById = function () {
+export const getToDoProjectById = (id) => getAllToDoProjects().find(p => p.id === id);
 
-}
-const getAllToDoProjects = function () {}
+const getAllToDoProjects = () => getProjectCollection();

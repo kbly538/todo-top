@@ -15,6 +15,7 @@ const createForm = function (e) {
     inptTitle.type = 'text';
     inptTitle.name = 'title';
     inptTitle.id = 'title';
+    inptTitle.placeholder = "Title"
 
     formElements.push(lblTitle);
     formElements.push(inptTitle);
@@ -22,11 +23,12 @@ const createForm = function (e) {
     // Create label and input for DESCRIPTION
     const lblDescription = document.createElement('label');
     lblDescription.setAttribute('for', 'description');
-    const inptDescription = document.createElement('input');
 
+    const inptDescription = document.createElement('input');
     inptDescription.type = 'textfield';
     inptDescription.name = 'description';
     inptDescription.id = 'description';
+    inptDescription.placeholder = 'Description (Optional)'
 
     formElements.push(lblDescription);
     formElements.push(inptDescription);
@@ -35,11 +37,17 @@ const createForm = function (e) {
     // Create label and input for PRIORITY
     const lblPriority = document.createElement('label');
     lblPriority.setAttribute('for', 'toDoPriority');
-    const inptPriority = document.createElement('input');
+    lblPriority.id = 'lblPriority';
+    lblPriority.textContent = 'Priority'
+    lblPriority.style.marginTop = '20px';
 
-    inptPriority.type = 'text';
+    const inptPriority = document.createElement('input');
+    inptPriority.type = 'range';
+    inptPriority.min = 1;
+    inptPriority.max = 3;
     inptPriority.name = 'toDoPriority';
     inptPriority.id = 'toDoPriority';
+    
 
     formElements.push(lblPriority);
     formElements.push(inptPriority);
@@ -47,9 +55,9 @@ const createForm = function (e) {
     // Create label and input for DUE DATE
     const lblDueDate = document.createElement('label');
     lblDueDate.setAttribute('for', 'dueDate');
-    const inptDueDate = document.createElement('input');
 
-    inptDueDate.type = 'date';
+    const inptDueDate = document.createElement('input');
+    inptDueDate.type = 'datetime-local';
     inptDueDate.name = 'dueDate';
     inptDueDate.id = 'dueDate';
 
@@ -58,13 +66,15 @@ const createForm = function (e) {
 
 
 
-    // Create label and input for DUE DATE
+    // Create label and input for Project
     const lblProject = document.createElement('label');
     lblProject.setAttribute('for', 'selectProject');
     
     const selectProject = document.createElement('select');
     selectProject.name = 'selectProject';
     selectProject.id = 'selectProject';
+    selectProject.value = 'Default'
+    
     getProjectCollection().forEach(proj => {
         const option = document.createElement('option');
         option.value = proj.id;

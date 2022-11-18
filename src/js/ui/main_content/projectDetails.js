@@ -41,19 +41,20 @@ const createProjectDetailsComponents = (project)=>{
         const todoDueDate = document.createElement('div');
         const priority = todo.priority;
         
+        
         switch (priority) {
-            case 3: {
-                singleTodoDiv.style.backgroundColor = HIGH_PRIORITY_COLOR; 
+            case "3": {
+                singleTodoDiv.style.backgroundColor = HIGH_PRIORITY_COLOR;
                 singleTodoDiv.style.color = 'white';
                 break;
             
             };
-            case 2: {
+            case "2": {
                 singleTodoDiv.style.backgroundColor = MEDIUM_PRIORITY_COLOR; 
                 singleTodoDiv.style.color = 'black';
                 break;
             };
-            case 1: {
+            case "1": {
                 singleTodoDiv.style.backgroundColor = LOW_PRIORITY_COLOR; 
                 singleTodoDiv.style.color = 'white'; 
                 break;
@@ -64,11 +65,10 @@ const createProjectDetailsComponents = (project)=>{
 
         todoTitle.textContent = todo.title;
         todoDescription.textContent = todo.description;
-        todoDueDate.textContent = todo.dueDate.toLocaleDateString();
-
+        todoDueDate.textContent = new Date(todo.dueDate)?.toLocaleString();
         singleTodoDiv.appendChild(todoTitle);
         if (todoDescription.textContent !== "") singleTodoDiv.appendChild(todoDescription);
-        singleTodoDiv.appendChild(todoDueDate);
+        if (todoDueDate.textContent !== 'Invalid Date') singleTodoDiv.appendChild(todoDueDate);
 
         todoDiv.appendChild(singleTodoDiv);
 

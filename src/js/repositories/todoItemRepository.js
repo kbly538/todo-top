@@ -1,5 +1,5 @@
-export const addToDoItem = function(){
-
+export const addToDoItem = function(item, project){
+    project.addTodo(item);
 }
 
 export const removeToDoItem = function(id){

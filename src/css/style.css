@@ -126,7 +126,7 @@ body {
 }
     .todo-form-wrapper-active > form {
         width: 500px;
-        height: 500px;
+        height: 600px;
         background-color: rgb(102, 169, 169);
         display: flex;
         flex-direction: column;
@@ -136,13 +136,21 @@ body {
         border-radius: 5px;
         
     }
-        .todo-form-wrapper-active > form input {
+        .todo-form-wrapper-active input[type="range"] {
+            margin: 0;
+        }
+
+        .todo-form-wrapper-active #lblPriority {
+            margin-bottom: 0;
+        }
+        .todo-form-wrapper-active > form input, select, #lblPriority{
             margin: 10px 0;
             width: 100%;
             height: 2.5rem;
             font-size: 1.5rem;
             padding: 3px;
         }
+
 
 .todo-form-wrapper-inactive{
     position: fixed;
