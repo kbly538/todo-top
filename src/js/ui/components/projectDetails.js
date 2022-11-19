@@ -1,8 +1,13 @@
+import { displayProjectDetails } from "../main_content/displayProjectDetails"
+import { removeTodo } from "./projectDetailsActions"
+import createButtonsWrapper from "./projectDetailsButtons/buttonsWrapper"
+import createRemoveButton from "./projectDetailsButtons/removeButton"
+
 let HIGH_PRIORITY_COLOR = '#ef5350'
 let MEDIUM_PRIORITY_COLOR = '#ff9800'
 let LOW_PRIORITY_COLOR = '#4caf50'
 
-const createProjectDetailsComponents = (project)=>{
+const createProjectDetailsComponent = (project)=>{
     const projectDetailsComponent = document.createElement('div')
     projectDetailsComponent.classList.add('main-content-project')
     projectDetailsComponent.setAttribute('data-id', project.id)
@@ -18,6 +23,8 @@ const createProjectDetailsComponents = (project)=>{
     project.todoList.forEach(todo => {
         const singleTodoDiv = document.createElement('div');
         singleTodoDiv.classList.add('single-todo-div')
+        const todoDetailsWrapper = document.createElement('div');
+        todoDetailsWrapper.classList.add('todo-details-wrapper')
         const todoTitle = document.createElement('h2');
         const todoDescription = document.createElement('div');
         const todoDueDate = document.createElement('div');
@@ -48,9 +55,23 @@ const createProjectDetailsComponents = (project)=>{
         todoTitle.textContent = todo.title;
         todoDescription.textContent = todo.description;
         todoDueDate.textContent = new Date(todo.dueDate)?.toLocaleString();
-        singleTodoDiv.appendChild(todoTitle);
-        if (todoDescription.textContent !== "") singleTodoDiv.appendChild(todoDescription);
-        if (todoDueDate.textContent !== 'Invalid Date') singleTodoDiv.appendChild(todoDueDate);
+        todoDetailsWrapper.appendChild(todoTitle);
+        if (todoDescription.textContent !== "") todoDetailsWrapper.appendChild(todoDescription);
+        if (todoDueDate.textContent !== 'Invalid Date') todoDetailsWrapper.appendChild(todoDueDate);
+        
+        //////////////////////////////////////////////////////////////////////////
+        // SEPERATE THIS LOGIC LATER
+        const buttonsWrapper = createButtonsWrapper();
+        const removeButton = createRemoveButton();
+        removeButton.addEventListener('click', ()=>{
+            removeTodo(project.id, todo.id)
+            displayProjectDetails(project.id)
+        })
+        buttonsWrapper.appendChild(removeButton)
+        ////////////////////////////////////////////////////////////////////////////////////////
+
+        singleTodoDiv.appendChild(todoDetailsWrapper)
+        singleTodoDiv.appendChild(buttonsWrapper)
 
         todoDiv.appendChild(singleTodoDiv);
 
@@ -58,10 +79,9 @@ const createProjectDetailsComponents = (project)=>{
     
     projectDetailsComponent.appendChild(todoDiv);
     
-    
 
     return projectDetailsComponent;
 }
 
 
-export default createProjectDetailsComponents;
+export default createProjectDetailsComponent;

@@ -8,7 +8,7 @@ import "./js/ui/main_content/displayProjectDetails"
 import "./js/ui/sidebar/newToDoForm/newTodoForm"
 import "./js/ui/components/floatingActionButton"
 import { updateProjectList } from "./js/ui/sidebar/projects";
-import { removeTodo } from "./js/ui/components/projectDetailsActions";
+import { displayProjectDetails } from "./js/ui/main_content/displayProjectDetails";
 
 
 const todoArgs1 = ['exercise', 'upper body for 1 hour', PRIORITIES.HIGH]
@@ -31,12 +31,13 @@ let todo5 = createTodoItem(...todoArgs3);
 
 
 
-homeProject.addTodo(todo1)
-homeProject.addTodo(todo2)
+defaultProject.addTodo(todo1)
+defaultProject.addTodo(todo2)
 homeProject.addTodo(todo3)
 workProject.addTodo(todo4)
 studyProject.addTodo(todo5)
 
 
+displayProjectDetails(1)
 updateProjectList()
 
