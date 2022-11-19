@@ -1,7 +1,7 @@
 import createProject from "../../model/toDoProject/toDoProjectOperations";
 import getProjectCollection from "../../model/projectCollection/projectCollection";
 
-import { displayProjectDetails } from "../main_content/projectDetails";
+import { displayProjectDetails } from "../main_content/displayProjectDetails";
 
 const projectTab = document.querySelector('.projects-container');
 const createNewProjectBtn = document.querySelector('.create-new-project.btn')

@@ -4,10 +4,11 @@ import {createProject} from "./js/model/toDoProject/toDoProjectOperations"
 import "./css/style.css"
 import "./js/ui/footer/footer"
 import "./js/ui/sidebar/projects"
-import "./js/ui/main_content/projectDetails"
+import "./js/ui/main_content/displayProjectDetails"
 import "./js/ui/sidebar/newToDoForm/newTodoForm"
 import "./js/ui/components/floatingActionButton"
-import { projects, updateProjectList } from "./js/ui/sidebar/projects";
+import { updateProjectList } from "./js/ui/sidebar/projects";
+import { removeTodo } from "./js/ui/components/projectDetailsActions";
 
 
 const todoArgs1 = ['exercise', 'upper body for 1 hour', PRIORITIES.HIGH]
@@ -21,12 +22,18 @@ let workProject = createProject('Work');
 let studyProject = createProject('Study');
 
 let todo1 = createTodoItem(...todoArgs1);
+let todo2 = createTodoItem(...todoArgs2);
+let todo3 = createTodoItem(...todoArgs3);
 let todo4 = createTodoItem(...todoArgs2);
 let todo5 = createTodoItem(...todoArgs3);
 
 
 
+
+
 homeProject.addTodo(todo1)
+homeProject.addTodo(todo2)
+homeProject.addTodo(todo3)
 workProject.addTodo(todo4)
 studyProject.addTodo(todo5)
 

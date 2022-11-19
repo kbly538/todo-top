@@ -126,7 +126,7 @@ body {
 
 }
     .todo-form-wrapper-active > form {
-        width: 60%;
+        width: 400px;
         height: fit-content;
         background-color: rgb(102, 169, 169);
         display: flex;
@@ -194,19 +194,18 @@ body {
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 140px 100px;
+    margin: 148px 38px;
 
 }
 
 #floating-action-button {
-    width: 100px;
-    height: 100px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     position: absolute;
-
     background-color: skyblue;
     color: white;
-    font-size: 3rem;
+    font-size: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -2,7 +2,7 @@ import PRIORITIES from "../../data/enums";
 import createTodoItem from "../../model/toDoItem/toDoItemOperations";
 import { addToDoItem } from "../../repositories/todoItemRepository";
 import { getToDoProjectById } from "../../repositories/todoProjectRepository";
-import { displayProjectDetails } from "../main_content/projectDetails";
+import { displayProjectDetails } from "../main_content/displayProjectDetails";
 
 export const submitTodoForm = (e) => {
     const formInputs = e.target.parentNode;

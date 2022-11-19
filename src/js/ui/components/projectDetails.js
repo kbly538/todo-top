@@ -1,24 +1,6 @@
-import getProjectCollection from "../../model/projectCollection/projectCollection"
-
 let HIGH_PRIORITY_COLOR = '#ef5350'
 let MEDIUM_PRIORITY_COLOR = '#ff9800'
 let LOW_PRIORITY_COLOR = '#4caf50'
-
-
-const mainContent = document.querySelector('.main-content')
-
-
-let projectHeading;
-let projectContents;
-
-export const displayProjectDetails = function(id){
-
-    mainContent.innerHTML = '';
-    const projects = getProjectCollection()
-    const currentProject = projects.find(p => p.id === id)
-    projectContents = createProjectDetailsComponents(currentProject);
-    mainContent.appendChild(projectContents)
-}
 
 const createProjectDetailsComponents = (project)=>{
     const projectDetailsComponent = document.createElement('div')
@@ -28,7 +10,7 @@ const createProjectDetailsComponents = (project)=>{
     todoDiv.classList.add('project-todos')
 
     // Title
-    projectHeading = document.createElement('h1');
+    const projectHeading = document.createElement('h1');
     projectHeading.textContent = project.title
     projectDetailsComponent.appendChild(projectHeading);
 
@@ -82,6 +64,4 @@ const createProjectDetailsComponents = (project)=>{
 }
 
 
-
-
-
+export default createProjectDetailsComponents;
