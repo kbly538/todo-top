@@ -1,3 +1,4 @@
+import { removeEventHandler } from "../eventHandlers/todoDetailsItemEvents"
 import { displayProjectDetails } from "../main_content/displayProjectDetails"
 import { removeTodo } from "./projectDetailsActions"
 import createButtonsWrapper from "./projectDetailsButtons/buttonsWrapper"
@@ -63,11 +64,8 @@ const createProjectDetailsComponent = (project)=>{
         // SEPERATE THIS LOGIC LATER
         const buttonsWrapper = createButtonsWrapper();
         const removeButton = createRemoveButton();
-        removeButton.addEventListener('click', ()=>{
-            removeTodo(project.id, todo.id)
-            displayProjectDetails(project.id)
-        })
-        buttonsWrapper.appendChild(removeButton)
+        buttonsWrapper.appendChild(removeButton);
+        removeEventHandler(removeButton, project, todo)
         ////////////////////////////////////////////////////////////////////////////////////////
 
         singleTodoDiv.appendChild(todoDetailsWrapper)
@@ -85,3 +83,5 @@ const createProjectDetailsComponent = (project)=>{
 
 
 export default createProjectDetailsComponent;
+
+
