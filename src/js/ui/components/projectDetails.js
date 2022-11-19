@@ -1,12 +1,9 @@
+import { HIGH_PRIORITY_COLOR, LOW_PRIORITY_COLOR, MEDIUM_PRIORITY_COLOR } from "../../data/config/properties"
 import { removeEventHandler } from "../eventHandlers/todoDetailsItemEvents"
-import { displayProjectDetails } from "../main_content/displayProjectDetails"
-import { removeTodo } from "./projectDetailsActions"
 import createButtonsWrapper from "./projectDetailsButtons/buttonsWrapper"
 import createRemoveButton from "./projectDetailsButtons/removeButton"
 
-let HIGH_PRIORITY_COLOR = '#ef5350'
-let MEDIUM_PRIORITY_COLOR = '#ff9800'
-let LOW_PRIORITY_COLOR = '#4caf50'
+
 
 const createProjectDetailsComponent = (project)=>{
     const projectDetailsComponent = document.createElement('div')
