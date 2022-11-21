@@ -1,4 +1,4 @@
-import { getToDoProjectById } from "../../repositories/todoProjectRepository"
+import { getTodoProjectById } from "../../repositories/todoProjectRepository"
 import createProjectDetails from "../components/projectDetails"
 
 
@@ -11,7 +11,7 @@ export const displayProjectDetails = function(id){
     // Clear main content section
     mainContent.innerHTML = '';
     // Find passed project
-    const currentProject = getToDoProjectById(id);
+    const currentProject = getTodoProjectById(id);
     // Create Project details
     const projectContents = createProjectDetails(currentProject);
     // Append details to main content section

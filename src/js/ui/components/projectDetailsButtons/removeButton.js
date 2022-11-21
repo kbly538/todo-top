@@ -1,10 +1,7 @@
 const createRemoveButton = function(){
-    const btn = document.createElement('button');
+    const btn = document.createElement('div');
     btn.classList.add('remove-todo-item-btn')
     btn.textContent = 'Remove'
-    btn.style.backgroundColor = 'red'
-    btn.style.color = 'white'
-    btn.style.border = 'none'
 
     return btn;
 }

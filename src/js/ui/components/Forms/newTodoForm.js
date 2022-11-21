@@ -1,5 +1,5 @@
-import getProjectCollection from "../../model/projectCollection/projectCollection";
-import { submitTodoForm } from "../eventHandlers/formEvents";
+import getProjectCollection from "../../../model/projectCollection/projectCollection";
+import { submitTodoForm } from "../../eventHandlers/formEvents";
 
 const createForm = function (e) {
     const form = document.createElement('form');
@@ -60,12 +60,12 @@ const createForm = function (e) {
     inptDueDate.type = 'datetime-local';
     inptDueDate.name = 'dueDate';
     inptDueDate.id = 'dueDate';
-
+    
     formElements.push(lblDueDate);
     formElements.push(inptDueDate);
-
-
-
+    
+    
+    
     // Create label and input for Project
     const lblProject = document.createElement('label');
     lblProject.setAttribute('for', 'selectProject');
@@ -84,9 +84,9 @@ const createForm = function (e) {
     
     formElements.push(lblProject)
     formElements.push(selectProject)
-
-
-
+    
+    
+    
     // Create submit button
     const submitBtn = document.createElement('div');
     submitBtn.textContent = 'Add'
@@ -94,12 +94,13 @@ const createForm = function (e) {
     submitBtn.setAttribute('type', 'submit');
     submitBtn.setAttribute('form', 'todoForm');
     submitBtn.addEventListener('click', submitTodoForm, false);
-
+    
     formElements.push(submitBtn);
-
-
+    
+    
     formElements.forEach(e => form.appendChild(e));
-
+    
+    
     return form;
 };
 

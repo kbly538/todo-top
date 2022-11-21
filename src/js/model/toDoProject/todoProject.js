@@ -15,7 +15,10 @@ const Project = function(title){
             this.todoList.find(t => todo.priority === t.priority);
 
         if (todoAlreadyAdded) console.error(`Todo already in the project`)
-        else this.todoList.push(todo);
+        else {
+            todo.project = this.id;
+            this.todoList.push(todo);
+        }
     }
 }
 

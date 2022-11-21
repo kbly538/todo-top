@@ -2,6 +2,7 @@ import PRIORITIES from "./js/data/enums";
 import {createTodoItem} from "./js/model/toDoItem/toDoItemOperations";
 import {createProject} from "./js/model/toDoProject/toDoProjectOperations"
 import "./css/style.css"
+import "./css/todoListItem.css"
 import "./js/ui/footer/footer"
 import "./js/ui/sidebar/projects"
 import "./js/ui/main_content/displayProjectDetails"
@@ -30,14 +31,11 @@ let todo5 = createTodoItem(...todoArgs3);
 
 
 
-
 defaultProject.addTodo(todo1)
 defaultProject.addTodo(todo2)
 homeProject.addTodo(todo3)
 workProject.addTodo(todo4)
 studyProject.addTodo(todo5)
-
-
 displayProjectDetails(1)
 updateProjectList()
 

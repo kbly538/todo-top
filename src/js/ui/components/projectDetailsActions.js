@@ -1,10 +1,10 @@
-import { getToDoItemById } from "../../repositories/todoItemRepository";
-import { getToDoProjectById, removeTodoFromProject } from "../../repositories/todoProjectRepository"
+import { updateTodoItem } from "../../repositories/todoItemRepository";
+import { removeTodoFromProject } from "../../repositories/todoProjectRepository"
 
-export const removeTodo = function(projectId, todoId){
-    return removeTodoFromProject(projectId, todoId) // returns true if successful
+export const removeTodo = function(todo, project){
+    return removeTodoFromProject(todo, project) // returns true if successful
 }
 
-const updateTodo = function(id){
-
+export const editTodo = function(todo, project){
+    return updateTodoItem(todo, project)
 }

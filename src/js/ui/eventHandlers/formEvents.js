@@ -1,7 +1,6 @@
-import PRIORITIES from "../../data/enums";
 import createTodoItem from "../../model/toDoItem/toDoItemOperations";
-import { addToDoItem } from "../../repositories/todoItemRepository";
-import { getToDoProjectById } from "../../repositories/todoProjectRepository";
+import { addTodoItem } from "../../repositories/todoItemRepository";
+import { getTodoProjectById } from "../../repositories/todoProjectRepository";
 import { displayProjectDetails } from "../main_content/displayProjectDetails";
 
 export const submitTodoForm = (e) => {
@@ -13,9 +12,10 @@ export const submitTodoForm = (e) => {
     const projectId = formInputs['selectProject'].value;
     
 
-    const project = getToDoProjectById(Number(projectId));
+    const project = getTodoProjectById(Number(projectId));
     const newItem = createTodoItem(title, description, priority, dueDate);
-    addToDoItem(newItem, project);
+    addTodoItem(newItem, project);
     displayProjectDetails(project.id)
 
 }
+

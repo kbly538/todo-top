@@ -1,5 +1,5 @@
 import getProjectCollection from "../../../model/projectCollection/projectCollection";
-import createForm from "../../components/todoForm";
+import createForm from "../../components/Forms/newTodoForm";
 
 const createTodoBtn = document.querySelector('.create-new-todo.btn')
 const mainContent = document.querySelector('.main-content');
@@ -9,7 +9,7 @@ mainContent.appendChild(todoForm)
 
 
 
-const evLis = function(btn){
+const displayNewTodoForm = function(btn){
     btn.addEventListener('click', (e)=> {
     
         todoForm.innerHTML = "";
@@ -21,19 +21,12 @@ const evLis = function(btn){
     
     })
 }
-// Create form
-// createTodoBtn.addEventListener('click', (e)=> {
-    
-//     todoForm.innerHTML = "";
-//     const form = createForm();
-//     todoForm.classList.remove('todo-form-wrapper-inactive')
-//     todoForm.classList.add('todo-form-wrapper-active')
-//     todoForm.appendChild(form);
-//     mainContent.appendChild(todoForm);
 
-// })
 
-evLis(createTodoBtn)
+
+
+
+displayNewTodoForm(createTodoBtn)
 
 
 // Closes form when clicked in the negative space

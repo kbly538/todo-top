@@ -1,7 +1,8 @@
 import { HIGH_PRIORITY_COLOR, LOW_PRIORITY_COLOR, MEDIUM_PRIORITY_COLOR } from "../../data/config/properties"
-import { removeEventHandler } from "../eventHandlers/todoDetailsItemEvents"
+import { editEventHandler, removeEventHandler } from "../eventHandlers/todoDetailsItemEvents"
 import createButtonsWrapper from "./projectDetailsButtons/buttonsWrapper"
 import createRemoveButton from "./projectDetailsButtons/removeButton"
+import createEditButton from "./projectDetailsButtons/editButton"
 
 
 
@@ -49,10 +50,10 @@ const createProjectDetailsComponent = (project)=>{
             default: singleTodoDiv.style.backgroundColor = LOW_PRIORITY_COLOR; break;
             
         }
-
+        
         todoTitle.textContent = todo.title;
         todoDescription.textContent = todo.description;
-        todoDueDate.textContent = new Date(todo.dueDate)?.toLocaleString();
+        todoDueDate.textContent = new Date(todo.dueDate)?.toLocaleString().substring(0, 16);
         todoDetailsWrapper.appendChild(todoTitle);
         if (todoDescription.textContent !== "") todoDetailsWrapper.appendChild(todoDescription);
         if (todoDueDate.textContent !== 'Invalid Date') todoDetailsWrapper.appendChild(todoDueDate);
@@ -60,9 +61,12 @@ const createProjectDetailsComponent = (project)=>{
         //////////////////////////////////////////////////////////////////////////
         // SEPERATE THIS LOGIC LATER
         const buttonsWrapper = createButtonsWrapper();
+        const editButton = createEditButton();
         const removeButton = createRemoveButton();
+        buttonsWrapper.appendChild(editButton);
         buttonsWrapper.appendChild(removeButton);
         removeEventHandler(removeButton, project, todo)
+        editEventHandler(editButton, todo)
         ////////////////////////////////////////////////////////////////////////////////////////
 
         singleTodoDiv.appendChild(todoDetailsWrapper)
