@@ -2,6 +2,7 @@ import createProject from "../../model/toDoProject/toDoProjectOperations";
 import getProjectCollection from "../../model/projectCollection/projectCollection";
 
 import { displayProjectDetails } from "../main_content/displayProjectDetails";
+import { displayNewProjectForm } from "./newProject/newProject";
 
 const projectTab = document.querySelector('.projects-container');
 const createNewProjectBtn = document.querySelector('.create-new-project.btn')
@@ -29,7 +30,8 @@ export const updateProjectList = ()=>{
 
 // ADD NEW PROJECT
 createNewProjectBtn.addEventListener('click', ()=>{
-    createProject(String(Math.floor(Math.random() * 300 )+ 30))
-    updateProjectList()
+    displayNewProjectForm()
 })
+
+
 

@@ -59,7 +59,7 @@ const createProjectDetailsComponent = (project)=>{
         if (todoDueDate.textContent !== 'Invalid Date') todoDetailsWrapper.appendChild(todoDueDate);
         
         //////////////////////////////////////////////////////////////////////////
-        // SEPERATE THIS LOGIC LATER
+        // TODO: SEPERATE THIS LOGIC LATER
         const buttonsWrapper = createButtonsWrapper();
         const editButton = createEditButton();
         const removeButton = createRemoveButton();

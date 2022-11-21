@@ -1,3 +1,17 @@
+:root {
+    /* Background colors */
+    --header-background-color: rgb(83, 162, 211);
+    --body-background-color: rgba(255, 255, 255, 0);
+    --form-background-color: rgb(56, 80, 91);
+    --footer-background-color: rgb(83, 162, 211);
+    --grid-container-background-color: rgb(209, 242, 242);
+    --sidebar-background-color: coral;
+    --create-new-project-btn-color: rgb(83, 162, 211);
+    --todo-form-wrapper-active-bc: rgba(35, 35, 35, 0.702);
+    --todo-form-wrapper-inactive-bc: rgba(35, 35, 35, 0.702);
+    --fab-background-color: skyblue;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 *, ul, li {
     box-sizing: border-box;
@@ -10,7 +24,7 @@ html{
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: var(--body-background-color);
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
 
@@ -26,7 +40,7 @@ body {
     width: 100%;
     height: 3rem;
     padding: 3px;
-    background-color: rgb(83, 162, 211);
+    background-color: var(--header-background-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +64,7 @@ body {
 .grid-container {
     height: calc(100vh - 3rem);
     display: grid;
-    background-color: rgb(209, 242, 242);
+    background-color: var(--grid-container-background-color);
     grid-template-columns: 1fr 6fr;
     grid-template-rows: auto;
 }
@@ -58,7 +72,7 @@ body {
 
 /* SIDEBAR */
 .sidebar {
-    background-color: coral;
+    background-color: var(--sidebar-background-color);
     padding: 10px;
 }
     /* SIDEBAR HEADING*/
@@ -81,7 +95,7 @@ body {
         }
 
         .create-new-project.btn {
-            background-color: rgb(83, 162, 211);
+            background-color: var(--create-new-project-btn-color);
             padding: 5px;
             border-radius: 3px;
             text-align: center;
@@ -118,7 +132,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(35, 35, 35, 0.702);
+    background-color: var(--todo-form-wrapper-active-bc);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,7 +142,7 @@ body {
     .todo-form-wrapper-active > form {
         width: 400px;
         height: fit-content;
-        background-color: rgb(102, 169, 169);
+        background-color: var(--form-background-color);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -159,7 +173,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(35, 35, 35, 0.702);
+    background-color: var(--todo-form-wrapper-inactive-bc);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,7 +188,7 @@ body {
     width: 100%;
     height: 3rem;
     padding: 3px;
-    background-color: rgb(83, 162, 211);
+    background-color: var(--footer-background-color);
     color: white;
     display: flex;
     justify-content: center;
@@ -203,7 +217,7 @@ body {
     height: 5rem;
     border-radius: 50%;
     position: absolute;
-    background-color: skyblue;
+    background-color: var(--fab-background-color);
     color: white;
     font-size: 5rem;
     display: flex;
@@ -231,6 +245,15 @@ body {
     bottom: 50px;
     scale: 0;
     transition: all 0.5s;
+}
+
+#submitBtn, #editBtn{
+    background-color: #4CAF50;
+    padding: 2px 20px;
+    margin: 5px auto;
+    font-size: 24px;
+    border-radius: 4px;
+    color: white
 }
 
 

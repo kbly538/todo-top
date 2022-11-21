@@ -3,6 +3,7 @@ import {createTodoItem} from "./js/model/toDoItem/toDoItemOperations";
 import {createProject} from "./js/model/toDoProject/toDoProjectOperations"
 import "./css/style.css"
 import "./css/todoListItem.css"
+import "./css/createProjectForm.css"
 import "./js/ui/footer/footer"
 import "./js/ui/sidebar/projects"
 import "./js/ui/main_content/displayProjectDetails"
@@ -10,6 +11,7 @@ import "./js/ui/sidebar/newToDoForm/newTodoForm"
 import "./js/ui/components/floatingActionButton"
 import { updateProjectList } from "./js/ui/sidebar/projects";
 import { displayProjectDetails } from "./js/ui/main_content/displayProjectDetails";
+import { displayNewProjectForm, initProjectForm } from "./js/ui/sidebar/newProject/newProject";
 
 
 const todoArgs1 = ['exercise', 'upper body for 1 hour', PRIORITIES.HIGH]
@@ -37,5 +39,5 @@ homeProject.addTodo(todo3)
 workProject.addTodo(todo4)
 studyProject.addTodo(todo5)
 displayProjectDetails(1)
+initProjectForm();
 updateProjectList()
-
