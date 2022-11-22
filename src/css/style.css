@@ -1,11 +1,11 @@
 :root {
     /* Background colors */
-    --header-background-color: rgb(83, 162, 211);
+    
     --body-background-color: rgba(255, 255, 255, 0);
     --form-background-color: rgb(56, 80, 91);
     --footer-background-color: rgb(83, 162, 211);
     --grid-container-background-color: rgb(209, 242, 242);
-    --sidebar-background-color: coral;
+    
     --create-new-project-btn-color: rgb(83, 162, 211);
     --todo-form-wrapper-active-bc: rgba(35, 35, 35, 0.702);
     --todo-form-wrapper-inactive-bc: rgba(35, 35, 35, 0.702);
@@ -35,72 +35,10 @@ body {
     width: 100%;
 }
 
-/* HEADER */
-.site-header {
-    width: 100%;
-    height: 3rem;
-    padding: 3px;
-    background-color: var(--header-background-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#header-title {
-    font-size: 2rem;
-    color: white;
-    margin-left: 20px;
-    font-weight: 700;
-}
-
-.user-panel {
-    font-size: 2rem;
-    color: white;
-    margin-right: 20px;
-    font-weight: 700;
-
-}
-
-.grid-container {
-    height: calc(100vh - 3rem);
-    display: grid;
-    background-color: var(--grid-container-background-color);
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: auto;
-}
 
 
-/* SIDEBAR */
-.sidebar {
-    background-color: var(--sidebar-background-color);
-    padding: 10px;
-}
-    /* SIDEBAR HEADING*/
-.sidebar .heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-    /* All PROJECTS */
-.allprojects {
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-}
-        .projects-container{
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
 
-        .create-new-project.btn {
-            background-color: var(--create-new-project-btn-color);
-            padding: 5px;
-            border-radius: 3px;
-            text-align: center;
-        }
-    
 /* MAIN CONTENT */
 .main-content {
     padding: 10px 10px 10px 10px;

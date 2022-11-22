@@ -1,5 +1,6 @@
 import Project from "../../../model/toDoProject/todoProject"
 import createProject from "../../../model/toDoProject/toDoProjectOperations";
+import { createTooltip } from "../../../utils/tooltipElement";
 import { updateProjectList } from "../projects";
 
 const createNewProjectForm = ()=>{
@@ -47,11 +48,10 @@ const createNewProjectForm = ()=>{
     window.addEventListener('keydown', (e)=>{
 
         const projectForm = document.querySelector('#new-project-form-container');
-        
         if (e.key !== 'Escape' || 
-            !projectForm || 
+            projectForm === null ||
             !projectForm.classList.contains('active'))  return;
-
+        
         projectForm.classList.toggle('active');
     })
     
@@ -60,7 +60,9 @@ const createNewProjectForm = ()=>{
     form.appendChild(inptTitle)
     form.appendChild(btnSumbit);    
     newProjectFormContainer.appendChild(form);
-
+    
+    const toolTip = createTooltip('Press \'ESC\' to exit')
+    newProjectFormContainer.appendChild(toolTip)
     
     
 
@@ -83,7 +85,12 @@ export const initProjectForm = () => {
 
 
 const submitNewProject = (e, val)=>{
-    createProject(val);
+    try {
+        createProject(val);
+    } catch 
+    {
+        console.log('project already exists')
+    }
     updateProjectList()
     e.preventDefault();
     

@@ -1,0 +1,48 @@
+:root {
+    --sidebar-background-color: #efefef;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background-color: var(--sidebar-background-color);
+    padding: 10px;
+}
+    /* SIDEBAR HEADING*/
+.sidebar .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    /* All PROJECTS */
+.allprojects {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+        .projects-container{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .create-new-project.btn {
+            background-color: var(--create-new-project-btn-color);
+            padding: 5px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .create-new-project.btn:active {
+            color: white;
+            background-color: red;
+        }
+
+
+.sidebar-project-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 1.3rem;
+}

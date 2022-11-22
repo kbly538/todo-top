@@ -17,6 +17,26 @@ const createProjectDetailsComponent = (project)=>{
     const projectHeading = document.createElement('h1');
     projectHeading.textContent = project.title
     projectDetailsComponent.appendChild(projectHeading);
+    
+    // TODO: MOVE THESE
+    projectHeading.style.display = 'inline-flex'
+    projectHeading.style.alignItems = 'center'
+    projectHeading.style.justifyContent = 'center'
+
+
+    
+    const removeProjectButton = document.createElement('span');
+    removeProjectButton.textContent = '❌';
+    removeProjectButton.style.fontSize = '20px';
+    removeProjectButton.addEventListener('click', ()=>{console.log(`removing ${project.title}....`)}, false)
+
+    const projectSettingsButton = document.createElement('span');
+    projectSettingsButton.textContent = '⚙️';
+    projectSettingsButton.style.fontSize = '20px';
+    projectSettingsButton.addEventListener('click', ()=>{console.log(`opening settings for ${project.title}....`)}, false)
+
+    projectHeading.appendChild(removeProjectButton);
+    projectHeading.appendChild(projectSettingsButton);
 
     // Body
     project.todoList.forEach(todo => {

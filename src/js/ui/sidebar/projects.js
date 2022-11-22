@@ -1,4 +1,3 @@
-import createProject from "../../model/toDoProject/toDoProjectOperations";
 import getProjectCollection from "../../model/projectCollection/projectCollection";
 
 import { displayProjectDetails } from "../main_content/displayProjectDetails";
@@ -16,9 +15,14 @@ export const updateProjectList = ()=>{
     let allProjects = getProjectCollection()
     
     allProjects.forEach( proj =>{
-        let singleProjectDiv = document.createElement('div');
+        const singleProjectDiv = document.createElement('div');
+        singleProjectDiv.classList.add('sidebar-project-title')
         singleProjectDiv.textContent = proj.title
         singleProjectDiv.setAttribute(`data-id`, proj.id)
+        const infoSpan = document.createElement('span');
+        infoSpan.classList.add('project-todo-count-badge');
+        infoSpan.textContent = '32';
+        singleProjectDiv.appendChild(infoSpan)
         projectTab.appendChild(singleProjectDiv)
         singleProjectDiv.addEventListener('click', displayProjectDetails.bind(this, proj.id))
     })
@@ -28,7 +32,7 @@ export const updateProjectList = ()=>{
 
 
 
-// ADD NEW PROJECT
+// ADD NEW PROJECT FORM
 createNewProjectBtn.addEventListener('click', ()=>{
     displayNewProjectForm()
 })
