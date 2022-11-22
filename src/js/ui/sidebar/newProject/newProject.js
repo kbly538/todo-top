@@ -79,7 +79,7 @@ export const displayNewProjectForm = ()=> {
 }
 
 export const initProjectForm = () => {
-    document.querySelector('.main-content').appendChild(createNewProjectForm())
+    document.body.appendChild(createNewProjectForm())
 }
 
 

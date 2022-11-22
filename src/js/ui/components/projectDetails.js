@@ -3,6 +3,8 @@ import { editEventHandler, removeEventHandler } from "../eventHandlers/todoDetai
 import createButtonsWrapper from "./projectDetailsButtons/buttonsWrapper"
 import createRemoveButton from "./projectDetailsButtons/removeButton"
 import createEditButton from "./projectDetailsButtons/editButton"
+import getProjectCollection from "../../model/projectCollection/projectCollection"
+import { removeTodoProject } from "../../repositories/todoProjectRepository"
 
 
 
@@ -28,15 +30,21 @@ const createProjectDetailsComponent = (project)=>{
     const removeProjectButton = document.createElement('span');
     removeProjectButton.textContent = '❌';
     removeProjectButton.style.fontSize = '20px';
-    removeProjectButton.addEventListener('click', ()=>{console.log(`removing ${project.title}....`)}, false)
-
+    removeProjectButton.style.cursor = 'pointer';
+    removeProjectButton.addEventListener('click', ()=>{
+         removeTodoProject(project)
+    }, false)
+    
     const projectSettingsButton = document.createElement('span');
     projectSettingsButton.textContent = '⚙️';
     projectSettingsButton.style.fontSize = '20px';
+    projectSettingsButton.style.cursor = 'pointer';
     projectSettingsButton.addEventListener('click', ()=>{console.log(`opening settings for ${project.title}....`)}, false)
 
     projectHeading.appendChild(removeProjectButton);
     projectHeading.appendChild(projectSettingsButton);
+
+    //^^^^^^^^MOVE THESE
 
     // Body
     project.todoList.forEach(todo => {

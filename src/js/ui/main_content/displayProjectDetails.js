@@ -17,3 +17,14 @@ export const displayProjectDetails = function(id){
     // Append details to main content section
     mainContent.appendChild(projectContents)
 }
+
+export const updateMainContentDisplay = function(){
+        // Clear main content section
+        mainContent.innerHTML = '';
+        // Find passed project
+        const currentProject = getTodoProjectById(1);
+        // Create Project details
+        const projectContents = createProjectDetails(currentProject);
+        // Append details to main content section
+        mainContent.appendChild(projectContents)
+}

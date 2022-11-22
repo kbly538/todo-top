@@ -1,3 +1,4 @@
+import { alertificate } from "../../utils/alert/alertificate"
 import createEditForm from "../components/Forms/editTodoForm"
 import { editTodo, removeTodo } from "../components/projectDetailsActions"
 import { displayProjectDetails } from "../main_content/displayProjectDetails"
@@ -6,6 +7,7 @@ export function removeEventHandler(removeButton, project, todo) {
     removeButton.addEventListener('click', () => {
         removeTodo(todo, project)
         displayProjectDetails(project.id)
+        alertificate(`Removed item`)
     })
 }
 

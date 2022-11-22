@@ -13,6 +13,7 @@ export const projects = projectTab.childNodes;
 export const updateProjectList = ()=>{
     projectTab.innerHTML = "";
     let allProjects = getProjectCollection()
+
     
     allProjects.forEach( proj =>{
         const singleProjectDiv = document.createElement('div');
@@ -21,7 +22,7 @@ export const updateProjectList = ()=>{
         singleProjectDiv.setAttribute(`data-id`, proj.id)
         const infoSpan = document.createElement('span');
         infoSpan.classList.add('project-todo-count-badge');
-        infoSpan.textContent = '32';
+        infoSpan.textContent = `${proj.todoList.length}`;
         singleProjectDiv.appendChild(infoSpan)
         projectTab.appendChild(singleProjectDiv)
         singleProjectDiv.addEventListener('click', displayProjectDetails.bind(this, proj.id))
