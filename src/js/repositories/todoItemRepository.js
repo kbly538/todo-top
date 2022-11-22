@@ -6,7 +6,7 @@ import { alertificate } from "../utils/alert/alertificate";
 export const addTodoItem = function(item, project){
     project.addTodo(item);
     updateProjectList()
-    alertificate('added');
+    alertificate('added', 'confirm');
 }
 
 export const removeTodoItem = function(todo){
@@ -20,7 +20,7 @@ export const updateTodoItem = function(todo, title, desc, priority, dueDate){
     todo.description = desc;
     todo.priority = priority;
     todo.dueDate = dueDate;
-    alertificate('Updated the item!');
+    alertificate('Updated the item!', 'confirm');
 }
 
 export const getTodoItem = function(){

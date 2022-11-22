@@ -7,7 +7,7 @@ export function removeEventHandler(removeButton, project, todo) {
     removeButton.addEventListener('click', () => {
         removeTodo(todo, project)
         displayProjectDetails(project.id)
-        alertificate(`Removed item`)
+        
     })
 }
 

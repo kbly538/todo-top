@@ -15,6 +15,7 @@ import "./js/ui/components/floatingActionButton"
 import { updateProjectList } from "./js/ui/sidebar/projects";
 import { displayProjectDetails } from "./js/ui/main_content/displayProjectDetails";
 import { displayNewProjectForm, initProjectForm } from "./js/ui/sidebar/newProject/newProject";
+import getProjectCollection from "./js/model/projectCollection/projectCollection";
 
 
 const todoArgs1 = ['exercise', 'upper body for 1 hour', PRIORITIES.HIGH]
@@ -43,4 +44,8 @@ workProject.addTodo(todo4)
 studyProject.addTodo(todo5)
 displayProjectDetails(1)
 initProjectForm();
+
+
+
+
 updateProjectList()
