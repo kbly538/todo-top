@@ -4,12 +4,12 @@
     --body-background-color: rgba(255, 255, 255, 0);
     --form-background-color: rgb(56, 80, 91);
     --footer-background-color: rgb(83, 162, 211);
-    --grid-container-background-color: rgb(209, 242, 242);
-    
-    --create-new-project-btn-color: rgb(83, 162, 211);
+    --grid-container-background-color: #264653;
+    --main-content-background-color:#264653;
+
     --todo-form-wrapper-active-bc: rgba(35, 35, 35, 0.702);
     --todo-form-wrapper-inactive-bc: rgba(35, 35, 35, 0.702);
-    --fab-background-color: skyblue;
+    --fab-background-color: #264653;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
@@ -37,13 +37,10 @@ body {
 }
 
 
-
-
-
 /* MAIN CONTENT */
 .main-content {
     padding: 10px 10px 10px 10px;
-    background-color: white;
+    background-color: var(--main-content-background-color);
     
 }
     /* MAIN CONTENT: PROJECT */

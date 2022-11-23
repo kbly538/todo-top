@@ -21,7 +21,7 @@ export const alertificate = (message, type) => {
     }, 2000)
 
     setTimeout(() => {
-        document.body.removeChild(wrapper);
+        document.body.removeChild(alertBox);
     }, 3000)
 }
 

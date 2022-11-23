@@ -1,3 +1,4 @@
+import getProjectCollection from "../model/projectCollection/projectCollection";
 import createEditForm from "../ui/components/Forms/editTodoForm";
 import createForm from "../ui/components/Forms/newTodoForm";
 import { updateProjectList } from "../ui/sidebar/projects";
@@ -31,3 +32,10 @@ export const getTodoItemById = function(){
 
 }
 
+
+export const getAllTodoItems = ()=>{
+    return getProjectCollection().reduce((todos, project)=>{
+        return todos.concat(project.todoList)
+    }, [])
+
+}

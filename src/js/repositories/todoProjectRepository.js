@@ -31,7 +31,7 @@ export const removeTodoFromProject = function (todoToRemove, project) {
 
 export const getProjectTodoList = (projectId) => getTodoProjectById(projectId).todoList;
 
-export const getTodoProjectById = (id) => getAllTodoProjects().find(p => p.id === id);
+export const getTodoProjectById = (id) => getProjectCollection().find(p => p.id === id);
 
-const getAllTodoProjects = () => getProjectCollection();
+
 
