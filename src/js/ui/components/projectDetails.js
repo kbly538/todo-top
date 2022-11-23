@@ -5,6 +5,8 @@ import createRemoveButton from "./projectDetailsButtons/removeButton"
 import createEditButton from "./projectDetailsButtons/editButton"
 import getProjectCollection from "../../model/projectCollection/projectCollection"
 import { removeTodoProject } from "../../repositories/todoProjectRepository"
+import { updateProjectList } from "../sidebar/projects"
+import { expandTodoItem } from "../events/expandTodoItem"
 
 
 
@@ -55,6 +57,7 @@ const createProjectDetailsComponent = (project)=>{
         const todoTitle = document.createElement('h2');
         const todoDescription = document.createElement('div');
         const todoDueDate = document.createElement('div');
+        
         const priority = todo.priority;
         
         
@@ -81,6 +84,10 @@ const createProjectDetailsComponent = (project)=>{
         
         todoTitle.textContent = todo.title;
         todoDescription.textContent = todo.description;
+
+
+
+
         todoDueDate.textContent = new Date(todo.dueDate)?.toLocaleString().substring(0, 16);
         todoDetailsWrapper.appendChild(todoTitle);
         if (todoDescription.textContent !== "") todoDetailsWrapper.appendChild(todoDescription);
@@ -97,6 +104,17 @@ const createProjectDetailsComponent = (project)=>{
         editEventHandler(editButton, todo)
         ////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+        //Todo item in the list initally shows just the title
+        todoDescription.setAttribute('hidden', 'true')
+        todoDueDate.setAttribute('hidden', 'true')
+        editButton.setAttribute('hidden', 'true')
+        removeButton.setAttribute('hidden', 'true')
+        todoTitle.setAttribute('data-expanded', 'false')
+        singleTodoDiv.addEventListener('click', expandTodoItem.bind(singleTodoDiv, todoTitle, [todoDescription, todoDueDate, editButton, removeButton]), false);
+
+
         singleTodoDiv.appendChild(todoDetailsWrapper)
         singleTodoDiv.appendChild(buttonsWrapper)
 
@@ -109,6 +127,8 @@ const createProjectDetailsComponent = (project)=>{
 
     return projectDetailsComponent;
 }
+
+
 
 
 export default createProjectDetailsComponent;

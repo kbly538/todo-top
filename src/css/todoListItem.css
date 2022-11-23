@@ -3,6 +3,21 @@
     gap: 5px;
 }
 
+.todo-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.todo-details-wrapper > h2[data-expanded='false']::after {
+    content: 'See Details 🔍';
+    margin: 10px;
+    font-weight: 100;
+    font-size: 1rem;
+    text-align: center;
+}   
+
 
 .single-todo-div {
     display: flex;

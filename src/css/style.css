@@ -55,7 +55,8 @@ body {
             margin-top: 20px;
         }
         .single-todo-div {
-            padding: 25px;
+            height: fit-content;
+            padding: 10px;
             border: 1px solid black;
             border-radius: 10px;
         }
