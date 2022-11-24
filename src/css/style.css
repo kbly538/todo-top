@@ -47,20 +47,16 @@ body {
     .main-content-project {
         margin: 10px 20px;
         margin-bottom: 100px;
+        transition: height 20s;
     }
         .project-todos {
             display: flex;
             flex-direction: column;
             gap: 10px;
             margin-top: 20px;
-        }
-        .single-todo-div {
-            height: fit-content;
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 10px;
-        }
+            
 
+        }
 
 /* TODO FORM */
 .todo-form-wrapper-active{

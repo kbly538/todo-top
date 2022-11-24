@@ -1,22 +1,20 @@
 import { updateProjectList } from "../sidebar/projects"
 
-export const expandTodoItem = (title, expandableAttrs) => {
-    expandableAttrs.forEach(el => {
+export const expandTodoItem = (title, expandableContainer) => {
 
-        let expanded = false;
 
-        if (el.hasAttribute('hidden')) {
-            el.removeAttribute('hidden')
-            expanded = true;
-        }
-        else {
-            el.setAttribute('hidden', 'true')
-            expanded = false;
-        }
-        
-        title.setAttribute('data-expanded', expanded);
-        console.log(title.dataset)
-        updateProjectList()
+    if (title.dataset.expanded == 'false') {
+        title.dataset['expanded'] = true;
+
     }
-    )
+
+    else {
+        title.dataset.expanded = false;
+
+    }
+
+
+
+
+    updateProjectList()
 }

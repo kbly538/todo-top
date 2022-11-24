@@ -1,18 +1,16 @@
 import getProjectCollection from "../model/projectCollection/projectCollection";
-import createEditForm from "../ui/components/Forms/editTodoForm";
-import createForm from "../ui/components/Forms/newTodoForm";
-import { updateProjectList } from "../ui/sidebar/projects";
 import { alertificate } from "../utils/alert/alertificate";
+import { updateDisplay} from "../ui/events/updateDisplay"
 
 export const addTodoItem = function(item, project){
     project.addTodo(item);
-    updateProjectList()
+    updateDisplay();
     alertificate('added', 'confirm');
 }
 
 export const removeTodoItem = function(todo){
     
-    throw Error('lan')
+    throw Error('Error removing')
 }
 
 
@@ -22,6 +20,7 @@ export const updateTodoItem = function(todo, title, desc, priority, dueDate){
     todo.priority = priority;
     todo.dueDate = dueDate;
     alertificate('Updated the item!', 'confirm');
+    updateDisplay();
 }
 
 export const getTodoItem = function(){

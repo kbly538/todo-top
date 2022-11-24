@@ -8,12 +8,13 @@ export const submitTodoForm = (e) => {
     const title = formInputs['title'].value;
     const description = formInputs['description']?.value;
     const priority = formInputs['toDoPriority']?.value;
+    console.log(formInputs['dueDate'].value === '')
     const dueDate = formInputs['dueDate'].value;
     const projectId = formInputs['selectProject'].value;
     
 
     const project = getTodoProjectById(Number(projectId));
-    const newItem = createTodoItem(title, description, priority, new Date(dueDate));
+    const newItem = createTodoItem(title, description, priority, dueDate);
     if (!newItem) return;
     addTodoItem(newItem, project);
     displayProjectDetails(project.id)

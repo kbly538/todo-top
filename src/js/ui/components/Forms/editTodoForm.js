@@ -1,3 +1,4 @@
+import { parseISO } from "date-fns";
 import getProjectCollection from "../../../model/projectCollection/projectCollection";
 import { updateTodoItem } from "../../../repositories/todoItemRepository";
 import { submitTodoForm } from "../../eventHandlers/formEvents";
@@ -64,7 +65,10 @@ const createEditForm = function (todo) {
     inptDueDate.type = 'datetime-local';
     inptDueDate.name = 'dueDate';
     inptDueDate.id = 'dueDate';
-    inptDueDate.value = new Date(todoToEdit.dueDate).toISOString().substring(0, 16);
+    
+    if (inptDueDate.value) {
+        inptDueDate.value = parseISO(new Date(todoToEdit.dueDate).toISOString());
+    }
 
     formElements.push(lblDueDate);
     formElements.push(inptDueDate);
@@ -98,7 +102,7 @@ const createEditForm = function (todo) {
     submitBtn.setAttribute('type', 'submit');
     submitBtn.setAttribute('form', 'todoForm');
     submitBtn.addEventListener('click', ()=>{
-        updateTodoItem(todoToEdit, inptTitle.value, inptDescription.value, inptPriority.value, '' )
+        updateTodoItem(todoToEdit, inptTitle.value, inptDescription.value, inptPriority.value, inptDueDate.value )
         displayProjectDetails(todo.project)
     }, false);
 

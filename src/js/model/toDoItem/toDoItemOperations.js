@@ -11,8 +11,8 @@ export const createTodoItem = function(title, description, priority, dueDate)
         alertificate('Title cannot be less than 2 characters.', 'warning')
         return;
     };
-
-    const item = new TodoItem(title, description, priority, dueDate)
+    
+    const item = new TodoItem(title, description, priority, dueDate != undefined ? dueDate : '')
 
     return item;
 }

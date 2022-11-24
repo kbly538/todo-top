@@ -1,0 +1,33 @@
+.single-todo-div h2[data-expanded='false']::after {
+    content: ' 🔍';
+    
+}
+
+
+
+.single-todo-div h2[data-expanded='false'] ~ div
+{
+    transform: translateX(200px);
+    scale: 0;
+    position: absolute;
+    pointer-events: none;
+
+    
+    
+}
+
+
+.single-todo-div h2[data-expanded='true'] ~ div
+{
+    transform: translateX(0);
+    opacity: 1;
+    position: relative;
+    pointer-events: all;
+    scale: 1;
+    transition: transform 0.2s;
+
+}
+
+
+    
+

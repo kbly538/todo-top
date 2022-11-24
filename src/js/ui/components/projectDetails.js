@@ -3,9 +3,7 @@ import { editEventHandler, removeEventHandler } from "../eventHandlers/todoDetai
 import createButtonsWrapper from "./projectDetailsButtons/buttonsWrapper"
 import createRemoveButton from "./projectDetailsButtons/removeButton"
 import createEditButton from "./projectDetailsButtons/editButton"
-import getProjectCollection from "../../model/projectCollection/projectCollection"
 import { removeTodoProject } from "../../repositories/todoProjectRepository"
-import { updateProjectList } from "../sidebar/projects"
 import { expandTodoItem } from "../events/expandTodoItem"
 
 
@@ -88,8 +86,8 @@ const createProjectDetailsComponent = (project)=>{
 
 
 
-        todoDueDate.textContent = new Date(todo.dueDate)?.toLocaleString().substring(0, 16);
-        todoDetailsWrapper.appendChild(todoTitle);
+        todoDueDate.textContent = new Date(todo.dueDate)?.toLocaleString();
+        singleTodoDiv.appendChild(todoTitle);
         if (todoDescription.textContent !== "") todoDetailsWrapper.appendChild(todoDescription);
         if (todoDueDate.textContent !== 'Invalid Date') todoDetailsWrapper.appendChild(todoDueDate);
         
@@ -104,19 +102,28 @@ const createProjectDetailsComponent = (project)=>{
         editEventHandler(editButton, todo)
         ////////////////////////////////////////////////////////////////////////////////////////
 
-
+        const componentMainContent = document.createElement('div');
+        componentMainContent.classList.add('component-main-content');
 
         //Todo item in the list initally shows just the title
-        todoDescription.setAttribute('hidden', 'true')
-        todoDueDate.setAttribute('hidden', 'true')
-        editButton.setAttribute('hidden', 'true')
-        removeButton.setAttribute('hidden', 'true')
+
         todoTitle.setAttribute('data-expanded', 'false')
-        singleTodoDiv.addEventListener('click', expandTodoItem.bind(singleTodoDiv, todoTitle, [todoDescription, todoDueDate, editButton, removeButton]), false);
+
+        // todoTitle.addEventListener('click', ()=>{
+        //     console.log(componentMainContent)
+        // }, false);
+        todoTitle.addEventListener('click', expandTodoItem.bind(singleTodoDiv, todoTitle, componentMainContent), false);
+
+        
+        
 
 
-        singleTodoDiv.appendChild(todoDetailsWrapper)
-        singleTodoDiv.appendChild(buttonsWrapper)
+        componentMainContent.appendChild(todoDetailsWrapper)
+        componentMainContent.appendChild(buttonsWrapper)
+
+        singleTodoDiv.appendChild(componentMainContent);
+        
+
 
         todoDiv.appendChild(singleTodoDiv);
 

@@ -7,16 +7,18 @@ import "./css/createProjectForm.css"
 import "./css/sidebar.css"
 import "./css/badges.css"
 import "./css/header.css"
+import "./css/componentMainContent.css"
+import "./css/singleTodoDiv.css"
 import "./css/newTodoForm.css"
 import "./js/ui/footer/footer"
 import "./js/ui/sidebar/projects"
 import "./js/ui/main_content/displayProjectDetails"
 import "./js/ui/sidebar/newToDoForm/newTodoForm"
 import "./js/ui/components/floatingActionButton"
-import { updateProjectList } from "./js/ui/sidebar/projects";
 import { displayProjectDetails } from "./js/ui/main_content/displayProjectDetails";
 import { initProjectForm } from "./js/ui/sidebar/newProject/newProject";
-import { allTodos, getTodaysTodos, getWeeksTodos, todayTodos, todosInProgress } from "./js/ui/sidebar/newProject/inProgress";
+import { updateDisplay } from "./js/ui/events/updateDisplay";
+
 
 
 const todoArgs1 = ['exercise', 'upper body for 1 hour', PRIORITIES.HIGH]
@@ -37,10 +39,6 @@ let todo5 = createTodoItem(...todoArgs3);
 
 
 
-
-
-
-
 defaultProject.addTodo(todo1)
 defaultProject.addTodo(todo2)
 homeProject.addTodo(todo3)
@@ -50,15 +48,6 @@ displayProjectDetails(1)
 initProjectForm();
 
 
-
-updateProjectList()
-
+updateDisplay()
 
 
-
-window.addEventListener('mousedown', ()=>{
-    document.querySelector('.today.todos > span').textContent = getTodaysTodos().length
-    document.querySelector('.week.todos > span').textContent = getWeeksTodos().length
-    console.log("hm")
-    
-})
