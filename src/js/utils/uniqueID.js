@@ -1,8 +1,9 @@
 const uniqueID = function () {
     if (uniqueID.last === undefined) uniqueID.last = 0;
     uniqueID.last++;
+    localStorage.setItem('uid', uniqueID.last);
     return (function () {
-        return uniqueID.last;
+        return Number(localStorage.getItem('uid'));
     })();
 };
 

@@ -35,7 +35,6 @@
     padding: 3px;
 }
 
-
 #new-project-form-container form > button {
     border-style: none;
     width: fit-content;
@@ -43,7 +42,8 @@
     border-radius: 4px;
     margin: 10px auto 0 auto;
     text-align: center;
-    color: white;  
+    color: black;  
+    background-color: #E9C46A;
 }
 
 

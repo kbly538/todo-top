@@ -1,4 +1,6 @@
 import {MAX_PROJECT_TITLE_LENGTH} from '../../data/config/properties';
+import { saveToLocaleStorage } from '../../DataStore/localStorage';
+import uniqueID from '../../utils/uniqueID';
 import { projectCollection } from '../projectCollection/projectCollection';
 import Project from './todoProject';
 
@@ -9,6 +11,7 @@ export const createProject = function(title){
     }
     const project = new Project (title);
     projectCollection.addProject(project);
+    saveToLocaleStorage(project.id, JSON.stringify(project))
     return project;
 
 }

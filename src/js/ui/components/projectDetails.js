@@ -9,6 +9,7 @@ import { expandTodoItem } from "../events/expandTodoItem"
 
 
 const createProjectDetailsComponent = (project)=>{
+    if (!project) return;
     const projectDetailsComponent = document.createElement('div')
     projectDetailsComponent.classList.add('main-content-project')
     projectDetailsComponent.setAttribute('data-id', project.id)

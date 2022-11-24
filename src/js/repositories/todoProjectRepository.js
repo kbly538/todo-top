@@ -1,3 +1,4 @@
+import { saveToLocaleStorage } from "../DataStore/localStorage";
 import getProjectCollection, { projectCollection } from "../model/projectCollection/projectCollection"
 import { updateMainContentDisplay } from "../ui/main_content/displayProjectDetails";
 import { updateProjectList } from "../ui/sidebar/projects";
@@ -13,7 +14,8 @@ export const removeTodoProject = function (project) {
         return;
     }
 
-    projectCollection.projects = projectCollection.projects.filter(p => p.id !== project.id); // TODO: WORKS?
+    projectCollection.projects = projectCollection.projects.filter(p => p.id !== project.id);
+
     updateProjectList()    
     updateMainContentDisplay()
     alertificate(`Removed Project: ${project.title}`, 'confirm');
@@ -22,6 +24,7 @@ export const removeTodoFromProject = function (todoToRemove, project) {
 
     if (project !== null) {
         project.todoList = project.todoList.filter(todoItem => todoItem !== todoToRemove);
+        saveToLocaleStorage(project.id, JSON.stringify(project));
         alertificate(`Removed item`, 'confirm')
         return true;
     }

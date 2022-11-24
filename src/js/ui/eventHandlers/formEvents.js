@@ -16,6 +16,7 @@ export const submitTodoForm = (e) => {
     const project = getTodoProjectById(Number(projectId));
     const newItem = createTodoItem(title, description, priority, dueDate);
     if (!newItem) return;
+    console.log("submit form", project)
     addTodoItem(newItem, project);
     displayProjectDetails(project.id)
 

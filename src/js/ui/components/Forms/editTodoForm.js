@@ -1,7 +1,6 @@
 import { parseISO } from "date-fns";
 import getProjectCollection from "../../../model/projectCollection/projectCollection";
 import { updateTodoItem } from "../../../repositories/todoItemRepository";
-import { submitTodoForm } from "../../eventHandlers/formEvents";
 import { displayProjectDetails } from "../../main_content/displayProjectDetails";
 
 const createEditForm = function (todo) {

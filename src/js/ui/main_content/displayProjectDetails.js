@@ -7,7 +7,7 @@ const mainContent = document.querySelector('.main-content')
 
 
 export const displayProjectDetails = function(id){
-
+    
     // Clear main content section
     mainContent.innerHTML = '';
     // Find passed project
@@ -15,6 +15,7 @@ export const displayProjectDetails = function(id){
     // Create Project details
     const projectContents = createProjectDetails(currentProject);
     // Append details to main content section
+    if (!projectContents) return; 
     mainContent.appendChild(projectContents)
 }
 

@@ -4,6 +4,7 @@ import uniqueID from "../../utils/uniqueID";
 
 const TodoItem = function(title, description, priority, dueDate = ''){
 
+    this.type = 'todo';
     this.title = title;
     this.description = description;
     if (dueDate !== '') this.dueDate = parseISO(dueDate);
