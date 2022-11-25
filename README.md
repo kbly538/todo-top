@@ -1,5 +1,5 @@
 # todo-top
-The Odin Project: Todo List - WIP
+The Odin Project: Todo List - WIP [^2]
 See live demo <a href="https://kbly538.github.io/todo-top/">here</a>
 ## Features
 - Keep your todos forever on the same device! <sup> Until you clear the local storage </sup>
@@ -13,3 +13,4 @@ See live demo <a href="https://kbly538.github.io/todo-top/">here</a>
 
 
 [^1]: not a designer;
+[^2]: Doesn't work on mobiles
