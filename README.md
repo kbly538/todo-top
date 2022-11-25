@@ -1,6 +1,6 @@
 # todo-top
 The Odin Project: Todo List - WIP
-See live demo <a href="https://github.com/kbly538/todo-top/deployments/activity_log?environment=github-pages">here</a>
+See live demo <a href="https://kbly538.github.io/todo-top/">here</a>
 ## Features
 - Keep your todos forever on the same device! <sup> Until you clear the local storage </sup>
 - Add todos with title, description, due date and priority 
