@@ -2,7 +2,7 @@
 The Odin Project: Todo List - WIP [^1]
 See live demo <a href="https://kbly538.github.io/todo-top/">here</a>
 ## Features
-- Keep your todos forever on the same device! <sup> Until you clear the local storage </sup>
+- Keep your todos forever on the same device! <sup> Unless you wipe out the local storage </sup>
 - Add todos with title, description, due date and priority 
 - Expand todos to see details and action buttons.
 - [Brutalist design!](https://brutalist-web.design/) [^2]
