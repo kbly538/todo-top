@@ -12,5 +12,5 @@ See live demo <a href="https://kbly538.github.io/todo-top/">here</a>
 
 
 
-[^1]: Doesn't work on mobiles
+[^1]: Doesn't work on mobile
 [^2]: not a designer;
